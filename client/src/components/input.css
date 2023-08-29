@@ -1,0 +1,14 @@
+#postInput {
+    width: 500px;
+    height: 100px;
+}
+
+#postButton {
+    background-color: rgb(218, 218, 218);
+}
+
+#inputs {
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+}
