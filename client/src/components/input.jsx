@@ -1,3 +1,5 @@
+import '../styles/input.css';
+
 export default function Input(){
     return(
         <form id="postInput" class="input-group">
