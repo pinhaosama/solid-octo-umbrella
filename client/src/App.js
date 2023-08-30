@@ -1,12 +1,12 @@
-import './App.css';
-import { Main } from "./components/Main.jsx";
+import "./App.css";
+import Login from "./components/Login";
+import Signup from "./components/Signup";
+import { Wall } from "./components/Wall";
+import { useState } from "react";
 
 function App() {
-  return (
-    <> 
-      <Main />
-    </>
-  );
+    const [currentUser, setCurrentUser] = useState("");
+    return <>{currentUser !== "" ? <Wall /> : <Login />}</>;
 }
 
 export default App;
