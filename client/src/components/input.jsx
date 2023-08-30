@@ -1,7 +1,6 @@
 import $ from 'jquery';
-import axios from 'axios';
-import FormData from 'form-data';
 import React from 'react';
+import '../styles/input.css';
 
 export default function Input(){
 
