@@ -6,7 +6,20 @@ import { useState } from "react";
 
 function App() {
     const [currentUser, setCurrentUser] = useState("");
-    return <>{currentUser !== "" ? <Wall /> : <Login />}</>;
+    function handlerUser(user) {
+        setCurrentUser(user);
+    }
+    return (
+        <>
+            {currentUser === "" ? (
+                <Login handlerUser={handlerUser} />
+            ) : currentUser === "?" ? (
+                <Signup />
+            ) : (
+                <Wall user={currentUser} />
+            )}
+        </>
+    );
 }
 
 export default App;
