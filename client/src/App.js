@@ -1,10 +1,12 @@
-import { Wall } from "./components/Wall";
+import './App.css';
+import { Main } from "./components/Main.jsx";
+
 function App() {
-    return (
-        <div>
-            <Wall user="Zalpa" />
-        </div>
-    );
+  return (
+    <> 
+      <Main />
+    </>
+  );
 }
 
 export default App;
