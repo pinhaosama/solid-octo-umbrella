@@ -1,7 +1,7 @@
 import { Routes, Route, Link } from "react-router-dom"
 import Login from './Login.jsx';
 import Signup from "./Signup.jsx";
-import Input from './components/input';
+import Input from './input';
 
 
 export function Main() {
