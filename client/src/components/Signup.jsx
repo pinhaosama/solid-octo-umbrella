@@ -1,7 +1,7 @@
 import { React, useState } from "react";
 import { TEInput, TERipple } from "tw-elements-react";
 
-export default function Signup({handlerUser}) {
+export default function Signup({ handlerUser }) {
     const [account, setAccount] = useState({
         email: "",
         name: "",
@@ -28,19 +28,19 @@ export default function Signup({handlerUser}) {
                 password: account.password,
             }),
         })
-        .then((res) => res.json())
-        .then((result) => {
-            console.log(result);
-            console.log(result.message)
-            if (result.state === 'sucess'){
-                alert(result.message);
-                handlerUser("");
-            } else if (result.state === 'fail') {
-                alert(result.message);
-            } else {
-                alert('Server Error');
-            }
-        })
+            .then((res) => res.json())
+            .then((result) => {
+                console.log(result);
+                console.log(result.message);
+                if (result.state === "sucess") {
+                    alert(result.message);
+                    handlerUser("");
+                } else if (result.state === "fail") {
+                    alert(result.message);
+                } else {
+                    alert("Server Error");
+                }
+            });
     };
     return (
         <section className="h-full bg-neutral-200 dark:bg-neutral-700">
@@ -50,7 +50,7 @@ export default function Signup({handlerUser}) {
                         <div className="block rounded-lg bg-white shadow-lg dark:bg-neutral-800">
                             <div className="g-0 lg:flex lg:flex-wrap">
                                 {/* <!-- Left column container--> */}
-                                <div className="px-4 md:px-0 lg:w-6/12">
+                                <div className="px-4 md:px-0 lg:w-6/12 text-black">
                                     <div className="md:mx-6 md:p-12">
                                         {/* <!--Logo--> */}
                                         <div className="text-center">
@@ -60,7 +60,7 @@ export default function Signup({handlerUser}) {
                                                 alt="logo"
                                             />
                                             <h4 className="mb-12 mt-1 pb-1 text-xl font-semibold">
-                                                We are The Lotus Team
+                                                FaceWood
                                             </h4>
                                         </div>
 

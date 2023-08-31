@@ -1,6 +1,9 @@
 import { Post } from "./Post";
 import { useState, useEffect } from "react";
 import Input from "./Input";
+import { Rightbar } from "./Rightbar";
+import { Leftbar } from "./Leftbar";
+import { Navbar } from "./Navbar";
 
 export function Wall({ user }) {
     const [refresh, setRefresh] = useState(0);
@@ -44,25 +47,47 @@ export function Wall({ user }) {
                 console.log("Somethig is wrong with server", error);
             });
     }
+    function handleDislikes(name, numberPost) {
+        fetch("http://localhost:5000/", {
+            method: "PUT",
+            headers: { task: "dislike" },
+            body: JSON.stringify({
+                username: name,
+                numberpost: numberPost,
+            }),
+        })
+            .then((response) => {
+                upDate();
+                //return response.json();
+            })
+            .catch((error) => {
+                console.log("Somethig is wrong with server", error);
+            });
+    }
     return (
-        <div className="bg-neutral-800 w-full flex flex-col items-center">
-            <h1 className="text-white text-5xl">{user}</h1>
-            <Input user={user} />
-            <button
-                className="text-white border border-white p-1 rounded-md"
-                onClick={upDate}
-            >
-                Update
-            </button>
-            {posts.map((post) => {
-                return (
-                    <Post
-                        post={post}
-                        key={post.date}
-                        handleLikes={handleLikes}
-                    />
-                );
-            })}
+        <div className="">
+            <Navbar />
+            <div className="bg-neutral-800 w-full flex flex-col items-center gap-1 sticky top-0">
+                <h1 className="text-white text-5xl">{user}</h1>
+                <Input user={user} />
+                <span className="w-3/4 border-b border-[#ee7724] my-3"></span>
+            </div>
+            <div className="flex gap-1 static justify-center">
+                <Leftbar upDate={upDate} />
+                <div className="flex-grow-0 w-2/4 static">
+                    {posts.map((post) => {
+                        return (
+                            <Post
+                                post={post}
+                                key={post.date}
+                                handleLikes={handleLikes}
+                                handleDislikes={handleDislikes}
+                            />
+                        );
+                    })}
+                </div>
+                <Rightbar />
+            </div>
         </div>
     );
 }
