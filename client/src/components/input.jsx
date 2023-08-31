@@ -5,38 +5,41 @@ import '../styles/input.css';
 export default function Input(){
 
     return(
-        <div>
-            <textarea id="textupload" name='textupload' type="text" placeholder="Text"></textarea>
+        <div className='container m-3 p-2 border-1'>
+            <textarea className='border-1' id="textupload" name='textupload' type="text" placeholder="Text"></textarea>
             <form action="http://localhost:5000/post" method="post" encType="multipart/form-data">
                 <input type="file" id='imgUpload' name="fileupload"/>
                 <br/>
-                <input id='submitImg' type="submit"/>
+                <input className='d-none' id='submitImg' type="submit"/>
             </form>
-            <button onClick={ upload }></button>
+            <button className='btn btn-info' onClick={ upload }>Post</button>
         </div>
     );
 
-    async function upload() {
+    function upload() {
         var txt = $('#textupload').val();
         console.log(txt);
         $.ajax({
             traditional: true,
             url: "http://localhost:5000/post",
             type: 'POST',
-            data: JSON.stringify(txt),
+            data: JSON.stringify({'content':txt}),
             headers: {
                 "task": "text",
-                "Content-Type": "text/xml"
+                "Content-type":"application/json"
             },
             success: function (response) {
-                console.log(response);
+                alert(response);
             },
             error: function (error) {
                 console.error("Error:", error);
             }
         });
-        if($('#imgUpload').val() != ''){
-            $('#submitImg').click();
-        }
+        setTimeout(() => {
+            if($('#imgUpload').val() != ''){
+                $('#submitImg').trigger("click");
+            }
+        }, 1000)
+        
     }
 }
