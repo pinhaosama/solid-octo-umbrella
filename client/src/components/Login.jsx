@@ -64,21 +64,7 @@ export function Login({ handlerUser }) {
                 handlerUser(result.currentUser.name);
             });
     };
-
-    const signUp = () => {
-        fetch("http://localhost:5000/login", {
-            method: "POST",
-            headers: {
-                task: "signup",
-            },
-            body: JSON.stringify({
-                email: account.email,
-                name: account.name,
-                password: account.password,
-            }),
-        });
-    };
-
+    
     return (
         <section className="h-full bg-neutral-200 dark:bg-neutral-700">
             <div className="container h-full p-10">
