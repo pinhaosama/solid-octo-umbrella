@@ -1,3 +1,9 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+}
+
 #postInput {
     width: 500px;
     height: 100px;
