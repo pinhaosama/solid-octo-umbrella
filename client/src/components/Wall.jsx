@@ -1,6 +1,6 @@
 import { Post } from "./Post";
 import { useState, useEffect } from "react";
-import Input from "./input";
+import Input from "./Input";
 
 export function Wall({ user }) {
     const [refresh, setRefresh] = useState(0);
