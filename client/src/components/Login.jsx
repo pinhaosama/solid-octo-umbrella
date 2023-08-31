@@ -85,7 +85,7 @@ export function Login({ handlerUser }) {
             <div className="container h-full p-10">
                 <div className="g-6 flex h-full flex-wrap items-center justify-center text-neutral-800 dark:text-neutral-200">
                     <div className="w-full">
-                        <div className="block rounded-lg bg-white shadow-lg dark:bg-neutral-800">
+                        <div className="block rounded-lg bg-neutral-800">
                             <div className="g-0 lg:flex lg:flex-wrap">
                                 {/* <!-- Left column container--> */}
                                 <div className="px-4 md:px-0 lg:w-6/12">
@@ -114,7 +114,7 @@ export function Login({ handlerUser }) {
                                                 className="mb-4"
                                                 placeholder="Email address"
                                                 style={{
-                                                    color: "black",
+                                                    color: "white",
                                                 }}
                                                 onChange={onChangeAccount}
                                             ></TEInput>
@@ -127,7 +127,7 @@ export function Login({ handlerUser }) {
                                                 className="mb-4"
                                                 placeholder="Password"
                                                 style={{
-                                                    color: "black",
+                                                    color: "white",
                                                 }}
                                                 onChange={onChangeAccount}
                                             ></TEInput>

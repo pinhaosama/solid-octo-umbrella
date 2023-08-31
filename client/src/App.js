@@ -10,7 +10,7 @@ function App() {
         setCurrentUser(user);
     }
     return (
-        <>
+        <div className="min-h-screen bg-neutral-800">
             {currentUser === "" ? (
                 <Login handlerUser={handlerUser} />
             ) : currentUser === "?" ? (
@@ -18,7 +18,7 @@ function App() {
             ) : (
                 <Wall user={currentUser} />
             )}
-        </>
+        </div>
     );
 }
 

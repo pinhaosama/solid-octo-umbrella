@@ -44,8 +44,13 @@ export function Wall({ user }) {
             });
     }
     return (
-        <div className="bg-gray-100 w-full flex flex-col items-center">
-            <button onClick={upDate}>Update</button>
+        <div className="bg-neutral-800 w-full flex flex-col items-center">
+            <button
+                className="text-white border border-white p-1 rounded-md"
+                onClick={upDate}
+            >
+                Update
+            </button>
             {posts.map((post) => {
                 return (
                     <Post
