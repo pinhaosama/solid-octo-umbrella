@@ -1,5 +1,6 @@
 import { Post } from "./Post";
 import { useState, useEffect } from "react";
+import Input from "./input";
 
 export function Wall({ user }) {
     const [refresh, setRefresh] = useState(0);
@@ -45,6 +46,8 @@ export function Wall({ user }) {
     }
     return (
         <div className="bg-neutral-800 w-full flex flex-col items-center">
+            <h1 className="text-white text-5xl">{user}</h1>
+            <Input user={user} />
             <button
                 className="text-white border border-white p-1 rounded-md"
                 onClick={upDate}
