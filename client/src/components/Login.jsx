@@ -83,7 +83,7 @@ export function Login({ handlerUser }) {
                                                 alt="logo"
                                             />
                                             <h4 className="mb-12 mt-1 pb-1 text-xl font-semibold">
-                                                We are The Lotus Team
+                                                FaceWood
                                             </h4>
                                         </div>
 
