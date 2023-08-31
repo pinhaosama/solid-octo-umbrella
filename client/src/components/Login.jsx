@@ -37,7 +37,7 @@ export function Login({ handlerUser }) {
         })
             .then((res) => res.json())
             .then((result) => {
-                if (result.message === "Login Successed") {
+                if (result.message === "Login Successful") {
                     console.log(result);
                     getCurrentUserData();
                 } else {
@@ -64,7 +64,7 @@ export function Login({ handlerUser }) {
                 handlerUser(result.currentUser.name);
             });
     };
-    
+
     return (
         <section className="h-full bg-neutral-200 dark:bg-neutral-700">
             <div className="container h-full p-10">
