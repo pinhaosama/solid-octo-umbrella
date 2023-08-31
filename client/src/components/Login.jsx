@@ -38,7 +38,7 @@ export function Login({ handlerUser }) {
         })
             .then((res) => res.json())
             .then((result) => {
-                if (result.message === "Login Successful") {
+                if (result.message === "Login Successed") {
                     console.log(result);
                     getCurrentUserData();
                 } else {

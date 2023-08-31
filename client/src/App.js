@@ -15,7 +15,7 @@ function App() {
             {currentUser === "" ? (
                 <Login handlerUser={handlerUser} />
             ) : currentUser === "?" ? (
-                <Signup />
+                <Signup handlerUser={handlerUser} />
             ) : (
                 <Wall user={currentUser} />
             )}
