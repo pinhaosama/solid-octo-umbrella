@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { TEInput, TERipple } from "tw-elements-react";
-import { Link, Route, Routes } from "react-router-dom";
 
 export function Login({ handlerUser }) {
     const [account, setAccount] = useState({
