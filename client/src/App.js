@@ -10,18 +10,17 @@ function App() {
     function handlerUser(user) {
         setCurrentUser(user);
     }
-    // return (
-    //     <>
-    //         {currentUser === "" ? (
-    //             <Login handlerUser={handlerUser} />
-    //         ) : currentUser === "?" ? (
-    //             <Signup />
-    //         ) : (
-    //             <Wall user={currentUser} />
-    //         )}
-    //     </>
-    // );
-    return(<Input />);
+    return (
+        <div className="min-h-screen bg-neutral-800">
+            {currentUser === "" ? (
+                <Login handlerUser={handlerUser} />
+            ) : currentUser === "?" ? (
+                <Signup />
+            ) : (
+                <Wall user={currentUser} />
+            )}
+        </div>
+    );
 }
 
 export default App;
