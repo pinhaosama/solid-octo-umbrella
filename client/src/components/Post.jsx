@@ -10,8 +10,8 @@ export function Post({ post, handleLikes, handleDislikes }) {
             <p>{post.text}</p>
             {post.img !== "" ? (
                 <img
-                    src={`http://localhost:5000/data/imgs/${post.img}`}
-                    alt=""
+                    src={`http://10.0.0.184:5000/data/imgs/${post.img}`}
+                    alt="post"
                 />
             ) : null}
 

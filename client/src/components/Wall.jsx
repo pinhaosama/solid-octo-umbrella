@@ -9,7 +9,7 @@ export function Wall({ user }) {
     const [refresh, setRefresh] = useState(0);
     const [posts, setPosts] = useState([]);
     useEffect(() => {
-        fetch("http://localhost:5000/", {
+        fetch("http://10.0.0.184:5000/wall", {
             method: "POST",
             headers: { task: "getPost" },
             body: JSON.stringify({
@@ -20,7 +20,7 @@ export function Wall({ user }) {
                 return response.json();
             })
             .then((data) => {
-                console.log(data);
+                //console.log(data);
                 setPosts(data);
             })
             .catch((error) => {
@@ -31,7 +31,7 @@ export function Wall({ user }) {
         setRefresh((prev) => prev + 1);
     }
     function handleLikes(name, numberPost) {
-        fetch("http://localhost:5000/", {
+        fetch("http://10.0.0.184:5000/wall", {
             method: "PUT",
             headers: { task: "like" },
             body: JSON.stringify({
@@ -48,7 +48,7 @@ export function Wall({ user }) {
             });
     }
     function handleDislikes(name, numberPost) {
-        fetch("http://localhost:5000/", {
+        fetch("http://10.0.0.184:5000/wall", {
             method: "PUT",
             headers: { task: "dislike" },
             body: JSON.stringify({
@@ -68,7 +68,14 @@ export function Wall({ user }) {
         <div className="">
             <Navbar />
             <div className="bg-neutral-800 w-full flex flex-col items-center gap-1 sticky top-0">
-                <h1 className="text-white text-5xl">{user}</h1>
+                <div className="flex gap-4">
+                    <img
+                        src={`http://10.0.0.184:5000/data/imgs/${user}profile.jpg`}
+                        alt="profile"
+                        className="w-16 rounded-full"
+                    />
+                    <h1 className="text-white text-5xl">{user}</h1>
+                </div>
                 <Input user={user} />
                 <span className="w-3/4 border-b border-[#ee7724] my-3"></span>
             </div>

@@ -13,7 +13,7 @@ export function Login({ handlerUser }) {
             ...account,
             [e.target.name]: e.target.value,
         });
-        console.log(account);
+        //console.log(account);
     };
 
     const changeAccountInfo = (key, value) => {
@@ -25,7 +25,7 @@ export function Login({ handlerUser }) {
     };
 
     const tryLogin = () => {
-        fetch("http://localhost:5000/login", {
+        fetch("http://10.0.0.184:5000/login", {
             method: "POST",
             headers: {
                 task: "login",
@@ -38,7 +38,7 @@ export function Login({ handlerUser }) {
             .then((res) => res.json())
             .then((result) => {
                 if (result.message === "Login Successful") {
-                    console.log(result);
+                    //console.log(result);
                     getCurrentUserData();
                 } else {
                     alert("Wrong Information");
@@ -47,7 +47,7 @@ export function Login({ handlerUser }) {
     };
 
     const getCurrentUserData = () => {
-        fetch("http://localhost:5000/getUserData", {
+        fetch("http://10.0.0.184:5000/getUserData", {
             method: "POST",
             headers: {
                 task: "getCurrentUserData",
@@ -58,7 +58,7 @@ export function Login({ handlerUser }) {
         })
             .then((res) => res.json())
             .then((result) => {
-                console.log(result);
+                //console.log(result);
                 changeAccountInfo("name", result.currentUser.name);
                 changeAccountInfo("password", result.currentUser.password);
                 handlerUser(result.currentUser.name);
@@ -66,9 +66,9 @@ export function Login({ handlerUser }) {
     };
 
     return (
-        <section className="h-full bg-neutral-200 dark:bg-neutral-700">
+        <section className="h-full bg-neutral-700">
             <div className="container h-full p-10">
-                <div className="g-6 flex h-full flex-wrap items-center justify-center text-neutral-800 dark:text-neutral-200">
+                <div className="g-6 flex h-full flex-wrap items-center justify-center text-neutral-200">
                     <div className="w-full">
                         <div className="block rounded-lg bg-neutral-800">
                             <div className="g-0 lg:flex lg:flex-wrap">

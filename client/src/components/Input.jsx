@@ -7,7 +7,7 @@ export default function Input({ user }) {
     return (
         <div className="w-1/3 flex flex-col gap-1">
             <form
-                action="http://localhost:5000/post"
+                action="http://10.0.0.184:5000/post"
                 id="imgForm"
                 method="post"
                 encType="multipart/form-data"
@@ -40,7 +40,7 @@ export default function Input({ user }) {
     function upload() {
         $.ajax({
             type: "POST",
-            url: "http://localhost:5000/post",
+            url: "http://10.0.0.184:5000/post",
             data: new FormData($("#imgForm")[0]),
             processData: false,
             contentType: false,
